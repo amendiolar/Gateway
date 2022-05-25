@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api-creditCard
+          uri: lb://api-creditCard
+          predicates:
+            - Path=/api/v1/rest-creditCards
+          filters:
+            - StripPrefix=1
+
